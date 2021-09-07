@@ -43,7 +43,7 @@ export function set_title_result(){
 /* 💛 본격적인 결과 부분 */
 /* 🧡 질문 기본 세팅 */
 export function load_main_question(){
-    return fetch('./data/question.json')
+    return fetch('./data/question_test.json')
     .then(res=>res.json())
     .then(data => data.questions);
 }//load_main_question
@@ -182,6 +182,9 @@ export function ready_setting_modal(){
     const modal = document.getElementById('sect_modal_wrap');
     const ul_set_blop = document.getElementById('ul_set_blop');
 
+    change_name_setting_modal(ul_set_blop,0);
+    change_name_setting_modal(ul_set_blop,1);
+
     sect_result.addEventListener('click',(e)=>{
         const target = e.target;
         if(target.classList.contains('btn_mod_rq')){
@@ -198,6 +201,13 @@ export function ready_setting_modal(){
 
     ul_set_blop.addEventListener('click',ready_set_blop);
 }//ready_setting_modal
+
+function change_name_setting_modal(ul,num){
+    const dom = ul.children[num].getElementsByClassName('name')[0];
+    dom.innerText = CP[num].name;
+}//change_name_setting_modal
+
+    
 
 function inspect_setting_modal(target,ul){
     const parent = target.parentElement.parentElement
@@ -230,6 +240,7 @@ function close_setting_modal(modal){
     modal.classList.add('hidden');
 }//close_setting_modal
 
+/* 💛 말풍선 추가 관련 */
 function ready_set_blop(e){
     e = e || window.event;
     target_MD = e.target;
