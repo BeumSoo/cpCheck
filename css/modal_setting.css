@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* 세팅 모달 관련 */
+#sect_modal_wrap{
+    display:flex; flex-wrap:wrap; flex-direction:column;
+    align-items:center; justify-content:center;
+    position:fixed;
+    top:var(--HEI-header);left:50%;
+    transform:translateX(-50%);
+    width:var(--WID); height:calc(100vh - var(--HEI-header));
+    background:rgba(39,44,51,.95);
+    box-shadow:inset 0 1rem 1rem rgba(0,0,0,.2);
+    text-align:center;
+    animation:showModal .5s ease-in-out both;}
+
+    #sect_modal_wrap.hidden{display:none;}
+
+    @keyframes showModal {
+        0%{opacity:0;}
+        100%{opacity:1;}}
+    
+/* 💖 질문 제목 */
+#nowQ{
+    position:relative;
+    margin-bottom:var(--gap);
+    text-shadow:0px 0px 1rem rgba(255,255,255,.5);
+    font-weight:normal; font-size:1.5rem;}
+#num-nowQ{font-size:1rem; color:var(--f_blur);}
+
+/* 💛 모달 */
+#set_modal{
+    position:relative;
+    width:90%;
+    background:var(--box);
+    border-radius:14px;
+    box-shadow:var(--boxShadow);}
+
+#set_modal .box{
+    position:relative;
+    padding:calc(var(--gap) * 2);
+    border-top:1px solid var(--f_blur);}
+
+    #set_modal .box:first-child{border-top:none;}
+
+/* 💙 about */
+.about-modal{
+    position:relative;
+    line-height:180%;
+    font-weight:100;
+    font-size:.8rem;color:rgba(255,255,255,.5);}
+    
+    .about-modal p:first-child{
+        margin-bottom:5px;
+        font-size:.9rem;color:#fff;}
+
+    .about-modal strong{font-weight:100;color:#fff;}
+    .about-modal p span{color:#fff;}
+    
+/* 💞 UL - blop */
+#ul_set_blop{
+    display:flex;flex-wrap:wrap;
+    justify-content:center;align-items:flex-start;
+    position:relative;
+    margin:var(--gap) auto;}
+
+#ul_set_blop li{
+    position:relative;
+    width:33%;}
+
+#ul_set_blop .color{
+    position:relative;
+    width:60px;aspect-ratio:1/1;
+    margin:0 auto;
+    box-shadow:var(--boxShadow);
+    background:var(--box);
+    border-radius:50%;
+    cursor:pointer;}
+
+    /* 일반 하트 배경 적용하기 */
+    #ul_set_blop .color::after{
+        content:'';display:block;position:absolute;
+        top:-5px;left:-5px;
+        width:70px;aspect-ratio:1/1;
+        background:url(../img/ic_heart_sqaure.svg) no-repeat center center / cover;
+        border-radius:20px;
+        filter:brightness(75%);
+        pointer-events:none;}
+
+    /* 유저 배경 적용하기 */
+    #ul_set_blop [data-who="user"] .color::after{background-image:url(../img/ic_user_square.svg);}
+
+    /* 플러스 버튼 */
+    .btn_add_blop{
+        display:block;position:absolute;
+        top:26px; right:5px;
+        width:40px; aspect-ratio:1/1;
+        border:none; border-radius:10px;
+        background:var(--bg-tp) url(../img/plus.svg) no-repeat center center / 70%;}
+
+    /* 이름 */
+    #ul_set_blop .name{
+        margin-top:1em;
+        font-size:0.85rem;}
+
+    /* off 시 */
+    #ul_set_blop .off,
+    .off + button, .off ~ .name{opacity:.2;}
+
+    .off + button, .off ~ .name{
+        pointer-events:none;
+        user-select:none;}
+
+/* 💙 버튼 */
+#btn_adjust{width:90%;}

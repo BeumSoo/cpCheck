@@ -1,0 +1,26 @@
+@font-face{
+font-family:'gmarketSans';
+src:url('GmarketSans_medium.eot') format('embedded-opentype'),
+    url('GmarketSans_medium.woff') format('woff'),
+    url('GmarketSans_medium.ttf') format('truetype');
+font-style:normal;
+font-weight:normal,500;
+}
+
+@font-face{
+font-family:'gmarketSans';
+src:url('GmarketSans_bold.eot') format('embedded-opentype'),
+    url('GmarketSans_bold.woff') format('woff'),
+    url('GmarketSans_bold.ttf') format('truetype');
+font-style:normal;
+font-weight:bold;
+}
+
+@font-face{
+font-family:'gmarketSans';
+src:url('GmarketSans_light.eot') format('embedded-opentype'),
+    url('GmarketSans_light.woff') format('woff'),
+    url('GmarketSans_light.ttf') format('truetype');
+font-style:normal;
+font-weight:100;
+}

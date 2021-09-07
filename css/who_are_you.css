@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+.q_diag{
+    position:relative;
+    width:80px;aspect-ratio:1/1;
+    margin-bottom:var(--gap);
+    border-radius:50%;
+    box-shadow:0 15px 1rem rgba(0,0,0,.5);
+    animation: q_diag_move 2s ease-in-out infinite;
+}
+
+@keyframes q_diag_move {
+    0%,100%{transform:rotate(0deg)}
+    40%,60%{transform:rotate(30deg)}
+}
+
+#wrap_who_are_you{
+    font-size:1.125rem;}
+
+#ipt_user{
+    display:block;
+    width:90%;
+    padding:1.2em .5em 1em;
+    margin:var(--gap) auto;
+    background:var(--box);
+    border:none; border-radius:14px;
+    font-size:1.25rem; font-weight:normal; text-align:center;
+    box-shadow:var(--boxShadow);
+}
+
+
+#ipt_user:focus{
+    outline:none;
+    box-shadow:0 0 3rem rgba(0,0,0,1);
+    color:var(--mint);
+
+}
+

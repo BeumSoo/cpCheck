@@ -1,0 +1,91 @@
+@charset "utf-8";
+@import url(./../font/fonts.css);
+:root{
+    --bg:rgb(34, 37, 43);
+    --bg-tp:rgba(34,37,43,.6);
+    --box:#3f4652;
+    --mint:#a0e7e5;
+    --pink:#ffaebc;
+    --gd:linear-gradient(-45deg,var(--pink),var(--pink),var(--mint),var(--mint));
+    --red:#ff0000;
+    --font:'gmarketSans',sans-serif;
+    --f_blur:#585c6e;
+    --boxShadow:0px 0px 20px rgba(0,0,0,.5);
+    --blur:blur(1rem);
+    --WID : 480px;
+    --HEI-header:48px;
+    --gap:25px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+img{vertical-align:middle;} li{list-style-type:none;}a{text-decoration:none;}li{list-style-type:none;}
+input,button{font-family:inherit;font-size:inherit;color:inherit;cursor:pointer;}
+
+html,body{
+    width:100%;min-width:300px;
+    min-height:100vh;
+    background:rgb(23, 26, 31);
+    font-family:var(--font); font-size:16px;color:#fff;}
+
+/* 💛 display */
+.hidden{display:none;}
+
+/* 💛 layout */
+#wrapper{
+    position:relative; overflow:hidden;
+    width:100%;max-width:var(--WID);
+    margin:0 auto;
+    background:var(--bg);
+    box-shadow:var(--boxShadow);}
+
+header + [id ^= "wrap_"]{
+    position:relative;
+    width:100%;}
+
+[id ^= "wrap_"].show{animation:display_next_wrap 2s ease-in-out both;}
+[id ^= "wrap_"].hide_animation{animation:hide_now_wrap 1s ease-in-out forwards;}
+
+
+    @keyframes display_next_wrap {
+        0%{transform:translateX(100%);opacity:0;}
+        50%{transform:translateX(0);}
+        100%{opacity:1;}}
+
+    @keyframes hide_now_wrap {
+        0%{transform:translateX(0);opacity:1;}
+        50%{transform:translateX(-100%);}
+        100%{opacity:0;}}
+
+.flexBox{
+    display:flex;flex-wrap:wrap;flex-direction:column;
+    justify-content:center; align-items:center;
+    position:relative;
+    min-height:calc(100vh - var(--HEI-header));
+    padding:50px var(--gap);}
+
+/* 💛 font */
+.f_mint{color:var(--mint);}
+.f_pink{color:var(--pink);}
+
+/* 💛 버튼 */
+button{transition:all .3s;}
+button:hover{
+    box-shadow:0 0 6rem rgba(160,231,229,.5);
+    filter:brightness(120%);}
+button:active{transform:translate(0,5px);}
+
+.btn_mint{
+    min-width:140px;
+    padding:1.3em 1em 1.1em;
+    background:var(--mint);
+    border:none; border-radius:12px;
+    font-weight:bold; font-size:1rem; color:var(--bg);
+    text-transform:uppercase;
+    box-shadow:var(--boxShadow);}
+
+/* 💛 인풋 */
+input::placeholder{
+    font-weight:normal;
+    color:var(--f_blur);}
+
+input:focus{outline:none;}

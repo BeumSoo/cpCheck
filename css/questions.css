@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* 진행사항 */
+#sect_progress{
+    position:relative;
+    width:90%; max-width:357px; height:6px;
+    margin-bottom:calc(3 * var(--gap));
+    border-radius:6px;
+    background:var(--box);
+    box-shadow:var(--boxShadow);}
+
+#bar-progress{
+    position:relative;
+    width:50%; height:100%;
+    text-align:right;
+    transition:all .3s .3s;}
+
+#bar{
+    position:relative;
+    width:100%; height:100%;
+    background:var(--mint);
+    border-radius:6px;
+    box-shadow:var(--boxShadow);}
+
+#text-progress{
+    margin-top:1em;
+    font-size:0.8rem;font-weight:bold; color:var(--f_blur);}
+
+/* 질문 - 넘버 */
+.num-question{
+    margin-bottom:var(--gap);
+    letter-spacing:.1em;
+    font-size:14px;color:var(--f_blur);}
+
+/* 질문 - ul */
+#ul-question{
+    position:relative;
+    margin-bottom:calc(var(--gap) * 3);
+    text-align:center; font-size:1.5rem; font-weight:normal;}
+
+#ul-question li{
+    position:relative;
+    line-height:180%;}
+
+    #ul-question li.show{animation:display_next_wrap 1s ease-in-out both;}
+
+#ul-question li p.main{color:#fff;}
+#ul-question li p:not(.main){font-size:.9em;color:var(--f_blur);}
+
+/* 답변 ul */
+#ul_answer{
+    position:relative;
+    width:65%;
+    margin:0 auto;}
+
+    #ul_answer.answer_animation{
+        animation:move_answer .8s .5s ease-in-out both;}
+
+    @keyframes move_answer {
+        0%,100%{opacity:1; transform:translateX(0);}
+        25%{opacity:0; transform:translateX(-100%);}
+        30%,40%{opacity:0; transform:translateX(100%);}
+    }
+
+#ul_answer li{
+    display:flex;flex-wrap:wrap; align-items:center;
+    position:relative; box-sizing:content-box;
+    width:100%;
+    margin:1.25rem auto; padding:10px;
+    background:var(--box);
+    box-shadow:var(--boxShadow);
+    border-radius:10rem;
+    font-size:1.375rem;
+    cursor:pointer;
+    transition:filter .3s;}
+
+#ul_answer li.on{
+    background:var(--bg);
+    border:3px solid #fff;}
+
+#ul_answer li:hover{filter:brightness(70%);}
+
+#ul_answer li span{pointer-events:none;}
+
+.color-answer{
+    display:block;
+    width:2em; aspect-ratio:1/1;
+    margin-right:1rem;
+    background:var(--f_blur);
+    border-radius:50%;
+    box-shadow:3px 3px 1rem rgba(0,0,0,.6);}
+
+    [data-answer="left"] .color-answer{background:var(--mint);}
+    [data-answer="right"] .color-answer{background:var(--pink);}
+    [data-answer="both"] .color-answer{background:var(--gd);}

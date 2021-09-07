@@ -1,0 +1,162 @@
+@charset "utf-8";
+/* 영역 재설정 */
+#wrap_result .flexBox{padding:0;}
+
+/* 로딩중일때 설정 */
+/* #sect_loading:not(.hidden) + .flexBox{
+    width:100%; height:calc(100vh - var(--HEI-header) - 30px);
+    overflow:hidden;} */
+/* 전체 인포 */
+#result_head{
+    position:relative;
+    margin:var(--gap) auto;
+    font-size:.87rem; font-weight:normal;
+    color:var(--f_blur);}
+
+#result_head strong{font-weight:normal;color:#fff;}
+
+#sect_result{position:relative;width:100%;}
+#sect_result > article{position:relative;width:100%;}
+
+/* 💛 결과 - 질문 제목 */
+.rq_title{
+    display:flex;flex-wrap:wrap;
+    justify-content:space-between; align-items:center;
+    position:relative;
+    padding:var(--gap);
+    border:1px solid var(--box);
+    border-width:1px 0;}
+
+    .rq_num{ 
+        /* outline:1px solid red; */
+        width:2rem;
+        font-size:0.875rem;color:var(--f_blur);}
+
+    .rq_txt{ 
+        /* outline:1px solid red; */
+        width:calc(100% - 2rem - 30px);
+        padding-left:.5em;
+        font-size:1.125rem;}
+
+    .btn_mod_rq{
+        display:block;
+        width:30px;aspect-ratio:1/1;
+        border:none;border-radius:6px;
+        background:rgba(255,255,255,.07) url(../img/ic_pencil.svg) no-repeat center center/cover;}
+
+/* 💙 결과 - 사람 이름 */
+.rq_who{
+    display:flex;flex-wrap:wrap;
+    justify-content:center;align-items:center;
+    position:relative;
+    margin:var(--gap) auto 0;
+    font-size:0.75rem; font-weight:100; color:rgba(255,255,255,.5);}
+
+.rq_who:empty::after{
+    content:'그리고 그곳에 아무도 없었다...';
+    color:var(--f_blur); font-weight:500;}
+    
+.rq_who li{
+    display:flex;
+    align-items:center;
+    position:relative;
+    margin:0 .5em;}
+    
+.rq_who .color{
+    display:block;
+    width:8px;aspect-ratio:1/1;
+    margin-right:.5em; margin-bottom:2px;
+    background:var(--box);
+    border-radius:50%;
+    box-shadow:var(--boxShadow);}
+
+    /* 기본 색깔 세팅 */
+    /* .rq_who li[data-who="left"] .color{background:var(--mint);} */
+    /* .rq_who li[data-who="right"] .color{background:var(--pink);} */
+
+
+        
+/* 🧡 결과 - 대화부분 */
+/* wrap */
+.rq_dialogue{
+    position:relative;
+    width:100%;
+    padding:var(--gap); padding-bottom:0;}
+    
+[class ^= "DIAL_"]{position:relative;margin-bottom:1rem;}
+
+/* 공통 - 프로필 사진 */
+.profile_img{
+    position:absolute;
+    width:40px;aspect-ratio:1/1;
+    background:var(--bg);
+    border-radius:50%;
+    box-shadow:var(--boxShadow);}
+
+.profile_img::after{
+    content:'';display:block;position:absolute;
+    top:0;left:0;
+    width:100%;height:100%;
+    border-radius:14px;
+    background:url(../img/ic_heart_sqaure.svg) no-repeat center center / cover;}
+
+
+/* 공통 - 프로필 이름 */
+.profile_name{
+    position:relative;
+    margin-bottom:.8em;
+    font-size:.87em;}
+
+/* 공통 - 말풍선 */
+:is(.profile_img) ~ .profile_name, .wrap_blop{margin-left:55px;}
+    
+.wrap_blop{
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-end;
+    position:relative;}
+.blop{
+    position:relative;
+    max-width:78%;
+    padding:1em; margin-bottom:10px;
+    background:var(--box);
+    border-radius:12px;
+    transition:all .3s;}
+
+    .blop:focus{
+        outline:none;
+        box-shadow:0 0 2rem rgba(0,0,0,1);
+        filter:brightness(120%);}
+
+/* 시간 */
+.rq_time{
+    display:block;
+    margin:0 .8em 1em;
+    font-size:12px;color:var(--f_blur);}
+
+    /* 유저 - 순서 바꾸기 */
+    [class = "DIAL_user"] .wrap_blop{justify-content:flex-end;}
+    [class = "DIAL_user"] .wrap_blop .blop{
+        order:1;
+        background:var(--mint);color:var(--bg);}
+    
+
+    /* 말풍선 꼭따리 */
+    .profile_name + .wrap_blop .blop::before,
+    [class ^= "DIAL_"] .wrap_blop:first-child .blop::before{
+        content:'';display:block;position:absolute;
+        width:0;height:0;
+        top:5px;left:-12px;
+        border-radius:5px;
+        border:10px solid transparent;
+        border-top-color:var(--box);border-right-color:var(--box);}    
+
+    /* 유저 - 말풍선 꼭따리 */
+    [class = "DIAL_user"] .wrap_blop:first-child .blop::before{
+        left:calc(100% - 8px);
+        border-color:transparent;
+        border-top-color:var(--mint);border-left-color:var(--mint);}
+
+
+
+

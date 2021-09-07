@@ -1,0 +1,110 @@
+<!-- 로딩중 -->
+<section id="sect_loading">
+    <div id="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <p>결과를 <strong>준비하는 중</strong>이에요...</p>
+</section><!-- sect_loading -->
+
+<!-- 결과화면 출력 -->
+<div class="flexBox">
+    
+<h2 id="result_head">
+    <strong class="user_name">user_name</strong>님이 생각하는
+    <strong id="result_head-left">left</strong>,
+    <strong id="result_head-right">right</strong>는 말이죠...
+</h2><!-- result_head -->
+
+<section id="sect_result">
+    <article>
+        <div class="rq_title">
+            <span class="rq_num">01.</span>
+            <p class="rq_txt">아침에 먼저 일어나는 쪽은 누규?</p>
+            <button class="btn_mod_rq" title="말풍선 추가 및 가리기"></button>
+        </div><!-- rq_title -->
+        <ul class="rq_who">
+            <li data-who="left"><span class="color"></span>아스트라제네카</li>
+            <li data-who="right"><span class="color"></span>모더나</li>
+        </ul><!-- rq_who -->
+        <div class="rq_dialogue">
+            <div data-who="left" class="DIAL_left">
+                <div class="profile_img color"></div>
+                <div class="profile_name">아스트라제네카</div>
+                <div class="wrap_blop">
+                    <div class="blop" contenteditable="true">아직도 안 일어나고 뭐하는데?</div>
+                    <span class="rq_time">오후 3:43</span>
+                </div><!-- wrap_blop -->
+                <div class="wrap_blop">
+                    <div class="blop" contenteditable="true">일어나라 좀</div>
+                    <span class="rq_time">오후 3:43</span>
+                </div><!-- wrap_blop -->
+            </div><!-- DIAL_left -->
+
+            <div data-who="right" class="DIAL_right">
+                <div class="profile_img color"></div>
+                <div class="profile_name">모더나</div>
+                <div class="wrap_blop">
+                    <div class="blop" contenteditable="true">사람이 왜 이렇게 빡빡해..; 빡빡이야?</div>
+                    <span class="rq_time">오후 3:43</span>
+                </div><!-- wrap_blop -->
+            </div><!-- DIAL_right -->
+
+            <div class="DIAL_user">
+                <div class="wrap_blop">
+                    <div class="blop" contenteditable="true">간단하게 당신의 생각을 적어보세요.</div>
+                    <span class="rq_time">오후 3:43</span>
+                </div>
+                <div class="wrap_blop">
+                    <div class="blop" contenteditable="true">왼쪽과 오른쪽의 말풍선을 수정하거나 추가, 제거 할 수 있어요!</div>
+                    <span class="rq_time">오후 3:43</span>
+                </div>
+            </div><!-- DIAL_user -->
+        </div><!-- rq_dialogue -->
+    </article><!-- 1 -->
+</section><!-- sect_result -->
+</div><!-- flexBox -->
+
+<!-- 💖 세팅 모달 -->
+<section id="sect_modal_wrap" class="hidden">
+    <h3 id="nowQ">
+        <span id="num-nowQ">01.</span>
+        <span id="txt-nowQ">Lorem Ipsum?</span>
+    </h3><!-- nowQ -->
+
+    <article id="set_modal">
+        <div class="box">
+            <div class="about-modal">
+                <p>해당 질문의 말풍선들을 숨기고 보이게 합니다.</p>
+                <p><strong>+ 버튼</strong>을 누르면 <strong>말풍선을 추가</strong> 할 수 있어요!</p>
+            </div><!-- about-modal -->
+
+            <ul id="ul_set_blop">
+                <li data-who="left">
+                    <div class="color"></div>
+                    <button class="btn_add_blop" data-blop="left"></button>
+                    <div class="name">아스트라제네카</div>
+                </li><!-- left -->
+                <li data-who="right">
+                    <div class="color"></div>
+                    <button class="btn_add_blop" data-blop="right"></button>
+                    <div class="name">모더나</div>
+                </li><!-- right -->
+                <li data-who="user">
+                    <div class="color"></div>
+                    <button class="btn_add_blop" data-blop="user"></button>
+                    <div class="name user_name">user_name</div>
+                </li><!-- user -->
+            </ul><!-- ul_set_blop -->
+
+            <button id="btn_adjust" class="btn_mint">확인</button>
+        </div><!-- box -->
+        <div class="box">
+            <div class="about-modal">
+                <p>말풍선을 삭제하고 싶나요?</p>
+                <p>삭제하고 싶은 말풍선 안의<br><span>내용을 모두 지우고 ESC키를 눌러보세요.</span><br>말풍선이 <span>자동</span>으로 사라집니다!</p>
+            </div><!-- about-modal -->
+        </div><!-- box -->
+    </article><!-- set_modal -->
+</section><!-- sect_modal_wrap -->
