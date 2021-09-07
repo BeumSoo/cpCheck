@@ -12,4 +12,10 @@
 * 2021.09.07 배포
 
 ***
+## 3.0 접속주소
+https://ohikmyeong.github.io/cpCheck/
+
+
+***
+##### Enjoy :-)
 ###### made by dpffpself / Ohikmyeong 
