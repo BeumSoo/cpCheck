@@ -3,10 +3,10 @@
 #sect_modal_wrap{
     display:flex; flex-wrap:wrap; flex-direction:column;
     align-items:center; justify-content:center;
-    position:fixed;
+    position:fixed; overflow-x:hidden; overflow-y:auto;
     top:var(--HEI-header);left:50%;
     transform:translateX(-50%);
-    width:var(--WID); height:calc(100vh - var(--HEI-header));
+    width:var(--WID); min-height:calc(100vh - var(--HEI-header));
     background:rgba(39,44,51,.95);
     box-shadow:inset 0 1rem 1rem rgba(0,0,0,.2);
     text-align:center;
@@ -21,6 +21,7 @@
 /* 💖 질문 제목 */
 #nowQ{
     position:relative;
+    width:100%;
     margin-bottom:var(--gap);
     text-shadow:0px 0px 1rem rgba(255,255,255,.5);
     font-weight:normal; font-size:1.5rem;}
@@ -111,3 +112,14 @@
 
 /* 💙 버튼 */
 #btn_adjust{width:90%;}
+
+
+/* ✨ 미디어쿼리 */
+@media all and (max-width:480px){
+/* 💖 질문 제목 */
+#nowQ{margin-bottom:1rem;font-size:5vw;}
+/* 💛 모달 */
+#set_modal{width:calc(100vw - 2rem);}
+#set_modal .box{padding:var(--gap) 1rem;}
+
+}/* 미디어쿼라 */

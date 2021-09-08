@@ -89,3 +89,11 @@ input::placeholder{
     color:var(--f_blur);}
 
 input:focus{outline:none;}
+
+
+/* ✨ 미디어쿼리 */
+@media all and (max-width:480px){
+    
+html,body{font-size:14px;}
+
+}/* 미디어쿼라 */

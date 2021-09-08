@@ -51,10 +51,10 @@ export function load_main_question(){
 export function set_default_result(arr){
     const sect_result = document.getElementById('sect_result');
     
-    //🚩 초기화 합니다
+    //초기화 합니다
     reset_dom(sect_result);
 
-    //🚩 기본 질문 목록을 불러와 세팅합니다.
+    //기본 질문 목록을 불러와 세팅합니다.
     for(let mainQ of arr){
         const area = document.createElement('ARTICLE');
 
@@ -66,26 +66,11 @@ export function set_default_result(arr){
         NUM_RQ++;
     }//for
 
-    //🚩 말풍선 지우기 관련 이벤트 위임
+    //말풍선 지우기 관련 이벤트 위임
     sect_result.addEventListener('keyup',(e)=>{
-        const target = e.target;
-
-        if(target.classList.contains('blop')){
-             //웹 관련 - ESC 눌렀을때
-             if(e.key == "Escape"){
-                target.blur();
-                return;
-            }//if - ESC 눌렀을때
-            
-            //내용이 있을땐 Early Return
-            if(target.innerText){return;}
-
-            //내용이 없는 상태에서 focus out시
-            target.addEventListener('blur',()=>{
-                inspect_blop(target);
-                return;
-            });
-        }//if - blop일때
+        if(e.key == "Escape" && e.target.classList.contains('blop')){
+            inspect_blop(e.target);
+        }
     });
 }//set_default_result
 
@@ -302,11 +287,12 @@ function add_blop(data){
 function inspect_blop(blop){
     const content = blop.innerText;    
     if(!content){
-        console.log('내용이 없는 말풍선을 삭제합니다!');
         const parent = blop.parentElement;
-        parent.remove();
+        const ancestor = blop.parentElement.parentElement;
+        ancestor.removeChild(parent);
         return;
     }//if
     const rq_time = blop.nextElementSibling;
     rq_time.innerText = `${get_time()}`;
+    blop.blur();
 }//inspect_blop

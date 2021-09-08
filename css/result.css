@@ -1,11 +1,12 @@
 @charset "utf-8";
 /* 영역 재설정 */
-#wrap_result .flexBox{padding:0;}
+#wrap_result .flexBox{padding:0;background:var(--bg);}
 
 /* 로딩중일때 설정 */
 /* #sect_loading:not(.hidden) + .flexBox{
     width:100%; height:calc(100vh - var(--HEI-header) - 30px);
     overflow:hidden;} */
+
 /* 전체 인포 */
 #result_head{
     position:relative;
@@ -42,7 +43,7 @@
         display:block;
         width:30px;aspect-ratio:1/1;
         border:none;border-radius:6px;
-        background:rgba(255,255,255,.07) url(../img/ic_pencil.svg) no-repeat center center/cover;}
+        background:rgba(255,255,255,.07) url(../img/ic_pencil.png) no-repeat center center/cover;}
 
 /* 💙 결과 - 사람 이름 */
 .rq_who{
@@ -98,7 +99,7 @@
     top:0;left:0;
     width:100%;height:100%;
     border-radius:14px;
-    background:url(../img/ic_heart_sqaure.svg) no-repeat center center / cover;}
+    background:url(../img/ic_heart_sqaure.png) no-repeat center center / cover;}
 
 
 /* 공통 - 프로필 이름 */
@@ -135,7 +136,9 @@
     font-size:12px;color:var(--f_blur);}
 
     /* 유저 - 순서 바꾸기 */
-    [class = "DIAL_user"] .wrap_blop{justify-content:flex-end;}
+    [class = "DIAL_user"] .wrap_blop{
+        margin-left:0;
+        justify-content:flex-end;}
     [class = "DIAL_user"] .wrap_blop .blop{
         order:1;
         background:var(--mint);color:var(--bg);}
@@ -158,5 +161,29 @@
         border-top-color:var(--mint);border-left-color:var(--mint);}
 
 
+/* ⚡ 캡쳐 관련 */
+#sect_capt{
+    position:relative;
+    padding:var(--gap) 0;
+    border-top:1px solid var(--f_blur);
+    line-height:180%;
+    text-align:center; font-size:0.875rem; font-weight:100;}
 
+#sect_capt h6{
+    line-height:180%;
+    font-size:1.5em; font-weight:normal;}
+
+#btn_capt{
+    display:block;position:relative;
+    margin:1rem auto 0; padding:1.3em 2em;
+    background:transparent;
+    border:2px solid var(--mint); border-radius:4px;}
+
+    #btn_capt span{position:relative;pointer-events:none;}
+    #btn_capt span::before{
+        content:'';display:inline-block;position:relative;
+        width:2em;height:1em;
+        margin-right:.5em;
+        background:url(../img/ic_download.svg) no-repeat center center / cover;
+    }
 

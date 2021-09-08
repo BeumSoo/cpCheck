@@ -21,7 +21,7 @@ export function change_progress(now){
 
 /* 🧡 질문 세팅 */
 export function load_questions(){
-    return fetch('./data/question.json')
+    return fetch('./data/question_test.json')
     .then(res=>res.json())
     .then(data => data.questions);
 }//load_questions
