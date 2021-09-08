@@ -43,7 +43,7 @@ export function set_title_result(){
 /* 💛 본격적인 결과 부분 */
 /* 🧡 질문 기본 세팅 */
 export function load_main_question(){
-    return fetch('./data/question_test.json')
+    return fetch('./data/question.json')
     .then(res=>res.json())
     .then(data => data.questions);
 }//load_main_question
