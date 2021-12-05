@@ -3,7 +3,7 @@ header{
     display:flex;flex-wrap:wrap;
     justify-content:center;align-items:center;
     position:relative;
-    width:100%; height:var(--HEI-header);
+    width:var(--WID); height:var(--HEI-header);
     box-shadow:var(--boxShadow);}
 
 h1{font-size:0.9rem; font-weight:normal; cursor:pointer;}

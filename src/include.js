@@ -3,7 +3,7 @@ import {who_are_you} from "./who_are_you.js";
 import { couple_name } from "./couple_name.js";
 import { load_questions, set_progress, set_questions } from "./question.js";
 import { set_click_answer } from "./answer.js";
-import { capture_browser } from "./capture.js";
+// import { capture_browser } from "./capture.js";
 
 export function includeHTML(){
     let includeArea = document.querySelectorAll('[data-include]');
@@ -41,8 +41,8 @@ export function includeHTML(){
                 
                 case "wrap_result" :
                     //화면 캡쳐 관련 이벤트 위임
-                    const btn_capt = document.getElementById('btn_capt');
-                    btn_capt.addEventListener('click',capture_browser);
+                    // const btn_capt = document.getElementById('btn_capt');
+                    // btn_capt.addEventListener('click',capture_browser);
                     break;
                     
                 default : break;

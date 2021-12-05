@@ -86,7 +86,7 @@ export function set_default_result(arr){
                 return;
             });
         }//if - blop일때
-    });
+    }); 
 }//set_default_result
 
 function create_rq_title(area,mainQ){
@@ -212,7 +212,10 @@ export function ready_setting_modal(){
     modal.addEventListener('click',(e)=>{
         const target = e.target;
         //모달 닫기
-        if(target.id == "btn_adjust"){close_setting_modal(modal);}
+        if(target.id == "btn_adjust"){
+            close_setting_modal(modal);
+            document.body.style.overflowY = 'auto';
+        }//if
     });
 
     ul_set_blop.addEventListener('click',ready_set_blop);
@@ -250,6 +253,7 @@ function open_setting_modal(target,modal){
     txt_nowQ.innerText = question.innerText;
 
     modal.classList.remove('hidden');
+    document.body.style.overflowY='hidden';
 }//open_setting_modal
 
 function close_setting_modal(modal){

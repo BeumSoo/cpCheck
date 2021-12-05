@@ -47,8 +47,7 @@ function add_arr(asw){
 
 function reset_answer_ul(ul,len){
     if(NOW_NUM >= len - 1){
-        const now = document.getElementById('wrap_questions');
-        const next = document.getElementById('wrap_result');
+        
 
         //결과화면의 기본적인 틀을 세팅한다.
         set_result_array(arr_answer);
@@ -56,14 +55,20 @@ function reset_answer_ul(ul,len){
 
         load_main_question()
         .then(arr => {
+            const now = document.getElementById('wrap_questions');
+            const next = document.getElementById('sect_loading');
+            display_next_wrap(now,next)
             set_default_result(arr);
             change_color_all();
             ready_setting_modal();
         })
         .then(()=>{
             //최종적으로 로딩화면으로 넘긴다.
-            display_next_wrap(now,next);
-            setTimeout(hide_loading, 5000);
+            const now = document.getElementById('sect_loading');
+            const next = document.getElementById('wrap_result');
+            setTimeout(()=>{
+                display_next_wrap(now,next);
+            }, 5000);
         });
         return;
     }//if - 다 했을시 로딩 및 결과로 넘김

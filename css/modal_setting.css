@@ -4,15 +4,17 @@
     display:flex; flex-wrap:wrap; flex-direction:column;
     align-items:center; justify-content:center;
     position:fixed; overflow-x:hidden; overflow-y:auto;
-    top:var(--HEI-header);left:50%;
+    top:0;left:50%;
     transform:translateX(-50%);
-    width:var(--WID); min-height:calc(100vh - var(--HEI-header));
+    width:var(--WID); height:100vh;
     background:rgba(39,44,51,.95);
     box-shadow:inset 0 1rem 1rem rgba(0,0,0,.2);
     text-align:center;
-    animation:showModal .5s ease-in-out both;}
+    animation:showModal .5s ease-in-out both;
+    position:-webkit-sticky;
+}
 
-    #sect_modal_wrap.hidden{display:none;}
+    #sect_modal_wrap.hidden{visibility:hidden;}
 
     @keyframes showModal {
         0%{opacity:0;}
