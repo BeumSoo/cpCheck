@@ -7710,4 +7710,4 @@
     return html2canvas;
 
 })));
-//# sourceMappingURL=html2canvas.js.map
+// # sourceMappingURL=html2canvas.js.map
